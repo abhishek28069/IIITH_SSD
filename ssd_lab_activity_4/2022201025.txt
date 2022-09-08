@@ -1,0 +1,58 @@
+--------------------------------------------------------------------------------------------------------
+HOME-WORK: SCOPE                                                      ABHISHEK REDDY GADDAM - 2022201025
+--------------------------------------------------------------------------------------------------------
+
+# Public scope
+--------------
+> Can be accessed inside class definition and also via objects created using the same class.
+> Individual existance for each object created.
+> In general, public scope is used to give unrestricted access to member variables of a class.
+> Objects can get and set these variables.
+
+# Private scope
+---------------
+> Can be accessed only by the member functions defined in the class definition.
+> Individual existance for each object created.
+> Private scope is used to hide the member variables from end user who uses the class to create objects.
+> Usecase: Data hiding and also Shielding from unintended updates/modifications.
+
+# Privilaged scope
+------------------
+> Similar to private scope but with additional provision of getting and setting the value of 
+  variables with the help of functions created in the class deifinition.
+> Usecase: To be providing read-only functionality to member variables.
+
+		
+# Static scope
+--------------
+> These variables are defined with respect to class.
+> These variables are not accesible from objects created.
+> Usecase: Implementing a functionality where a static variable can be used to store the number of objects
+  of same class are created.
+
+
+
+# Example
+---------
+
+	class MyClass {
+			#readOnly = 1;
+			publicVariable = 2;
+			static numOfObjects = 0;
+			constructor(){
+				Myclass.objectCount++;
+			}
+			printReadOnly(){
+				console.log("Privilaged access to private variable - ", readOnly);
+			}
+	};
+
+	//driver code
+	MyClass myClassObj = new MyClass();
+	myClassObj.publicVariable = 10; //setting public variable
+	cout<<myClassObj.publicVariable; //getting public variable
+	myClassObj.readOnly = 20; //ERROR
+	myClassObj.printReadOnly(); //privilaged access to private variable
+	console.log("Object Count - ", MyClass.objectCount); //static variable printing the number of objects created  
+
+ 
