@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Form</title>
+  </head>
+  <body>
+    <h1>Team Form</h1>
+    <form action="" onsubmit="prevent()" class="form_container">
+      <div class="input_row">
+        <label for="managersName">Manager Name</label>
+        <input name="managersName" id="managerName" type="text" required />
+      </div>
+      <div class="input_row">
+        <label for="groupEmail">Group Email</label>
+        <input name="groupEmail" id="email" type="email" required />
+      </div>
+      <div class="input_row">
+        <label for="username">Server Username</label>
+        <input name="username" id="username" type="text" required pattern="(?=.*\d)(?=.*[A-Z]).{2,}" />
+        <span id="erroruser"></span>
+      </div>
+      <div class="input_row">
+        <label for="password">Server Password</label>
+        <input name="password" id="password" type="password" required />
+      </div>
+      <div class="input_row">
+        <label for="password2">Confirm Password</label>
+        <input name="password2" id="password2" type="password" required />
+        <span id="errorpass"></span>
+      </div>
+      <div class="input_row">
+        <label for="teamlead">Team Lead</label>
+        <select name="teamlead" id="teamlead" id="teamlead" required>
+          <option value="Abhishek">Abhishek</option>
+          <option value="Chandu">Chandu</option>
+          <option value="Srikant">Srikant</option>
+          <option value="Prudhvi">Prudhvi</option>
+        </select>
+      </div>
+
+      
+        <span for="teammembers">Team Members</span>
+        <div class="dragcontainer">
+            <div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <li ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true" id="dragtarget" value="Abhishek">Abhishek</p>
+                <li ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true" id="dragtarget" value="Sanjay">Sanjay</p>
+                <li ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true" id="dragtarget" value="prudhvi">prudhvi</p>
+                <li ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true" id="dragtarget" value="Srikant">Srikant</p>
+                <li ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true" id="dragtarget" value="Chandu">Chandu</p>
+                <li ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true" id="dragtarget" value="Venkatesh">Venkatesh</p>
+                </div>
+            <div class="droptarget" id="members" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+      
+
+      <div><input type="submit" id="submit" value="submit" /></div>
+    </form>
+
+
+    <button id="dark">Dark Mode</button>
+
+
+    <script src="./script.js"></script>
+  </body>
+</html>
